@@ -32,9 +32,9 @@ const Navabar = () => {
                         <MenuRounded/>
                     </div>
                     <div className="item">
-                        <img src="https://lh3.googleusercontent.com/a/ACg8ocIMeALVbVgpXEZWzKUmmcq-fs0Usv2OWP_xGjjqc9o6=s96-c"
+                        <img src="https://thispersondoesnotexist.com/"
                         className="avatar"
-                        ></img>
+                        alt=""/>
                     </div>
                 </div>
             </div>
