@@ -1,7 +1,7 @@
 import "./chart.scss"
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
-const Charts = () => {
+const Charts = ({aspect,title}) => {
 
     const data = [
         {name: "January", total: 1200},
@@ -14,12 +14,12 @@ const Charts = () => {
 
     return (
         <div className="chart">
-            <div className="title">Last 6 Months </div>
-            <ResponsiveContainer width="100%" aspect={2/1}>
+            <div className="title"> {title} </div>
+            <ResponsiveContainer width="100%" aspect={aspect}>
                 <AreaChart width={730} height={250} data={data}
                     margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <defs>
-                        <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
+                        <linearGradient id="total" x1="0" y1="0" x2="0" y2="1" >
                             <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
                             <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
                         </linearGradient>
