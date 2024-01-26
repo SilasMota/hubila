@@ -67,7 +67,7 @@ const List = () => {
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Tracker ID</TableCell>
+                        <TableCell className="tableCell">Tracker ID</TableCell>
                         <TableCell className="tableCell">Product</TableCell>
                         <TableCell className="tableCell">Customer</TableCell>
                         <TableCell className="tableCell">Date</TableCell>
@@ -79,7 +79,7 @@ const List = () => {
                 <TableBody>
                     {rows.map((row) => (
                         <TableRow key={row.id}>
-                            <TableCell >{row.id}</TableCell>
+                            <TableCell className="tableCell">{row.id}</TableCell>
                             <TableCell className="tableCell">
                                 <div className="cellWrapper">
                                     <img src={row.img} alt="" className="image"/>

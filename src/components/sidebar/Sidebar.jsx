@@ -1,8 +1,13 @@
 import { AssignmentRounded, EditNotificationsRounded, EqualizerRounded, Inventory, LogoutRounded, PeopleRounded, PersonRounded, SettingsRounded, SpaceDashboard } from "@mui/icons-material";
 import "./sidebar.scss"
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Sidbar = () => {
+
+    const { dispatch } = useContext(DarkModeContext);
+
     return ( 
         <div className="sidebar">
             <div className="top">
@@ -61,8 +66,8 @@ const Sidbar = () => {
                 </ul>
             </div>
             <div className="bottom">
-                <div className="colorOption"></div>
-                <div className="colorOption"></div>
+                <div className="colorOption" onClick={() => dispatch({type:"LIGHT"})}></div>
+                <div className="colorOption" onClick={() => dispatch({type:"DARK"})}></div>
             </div>
         </div>
      );

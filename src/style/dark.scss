@@ -1,0 +1,98 @@
+.app.dark {
+    background-color: #222;
+    color: #9c9c9c;
+
+    .homeContainer {
+        background-color: #222;
+    }
+
+    .widget,
+    .featured,
+    .chart,
+    .listContainer {
+        background-color: #111;
+
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .singleContainer {
+
+        .left,
+        .bottom {
+            background-color: #111;
+
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+
+    }
+
+    .new{
+        .top,.bottom{
+            background-color: #111;
+
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+    }
+
+
+    .table {
+        background-color: #111;
+
+        .tableCell {
+            color: #9c9c9c;
+        }
+
+    }
+
+    .navbar,
+    .sidebar {
+        background-color: #111;
+        color: #9c9c9c;
+
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    ul {
+        li {
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+
+    .newContainer {
+        background-color: #222;
+    }
+
+    .singleContainer {
+        background-color: #222;
+    }
+
+    .listContainer {
+        background-color: #222;
+    }
+
+    .datatable {
+        background-color: #222;
+        color: #9c9c9c;
+
+        .datagrid {
+            background-color: #111;
+            color: #9c9c9c;
+            border: none;
+
+            .cellWithStatus {
+                color: #9c9c9c;
+            }
+        }
+    }
+
+    input {
+        background-color: transparent;
+    }
+}

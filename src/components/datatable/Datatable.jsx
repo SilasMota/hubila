@@ -3,9 +3,15 @@ import { DataGrid } from '@mui/x-data-grid';
 import { userColumns, userRows } from "../../datatabelsource";
 import { DeleteForeverRounded, RemoveRedEyeRounded } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Datatable = () => {
 
+    const handleDelete = (id) =>{
+        setData(data.filter((item) => item.id !== id));
+    }
+    
+    const [data, setData] = useState(userRows);
     const actionColumn = [
         {
             field:"action", 
@@ -20,7 +26,7 @@ const Datatable = () => {
                             <div className="viewButton"><RemoveRedEyeRounded fontSize="small"/></div>
                         </Link>
                         <Link>
-                            <div className="deleteButton"><DeleteForeverRounded fontSize="small"/></div>
+                            <div className="deleteButton" onClick={()=>handleDelete(params.row.id)}><DeleteForeverRounded fontSize="small"/></div>
                         </Link>
                     </div>
                 )
@@ -37,7 +43,8 @@ const Datatable = () => {
             </div>
             
             <DataGrid 
-            rows={userRows} 
+            className="datagrid"
+            rows={data} 
             columns={userColumns.concat(actionColumn)} 
             initialState={{
                 pagination: {

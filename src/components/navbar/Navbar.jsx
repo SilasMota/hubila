@@ -1,7 +1,11 @@
-import { ChatRounded, DarkModeRounded, FullscreenRounded, MenuRounded, NotificationsRounded, SearchRounded, TranslateRounded } from "@mui/icons-material";
+import { ChatRounded, DarkModeRounded, FullscreenRounded, LightModeRounded, MenuRounded, NotificationsRounded, SearchRounded, TranslateRounded } from "@mui/icons-material";
 import "./navbar.scss"
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const Navabar = () => {
+    const { darkMode, dispatch } = useContext(DarkModeContext);
+
     return ( 
         <div className="navbar">
             <div className="wrapper">
@@ -14,8 +18,8 @@ const Navabar = () => {
                         <TranslateRounded/>
                         English
                     </div>
-                    <div className="item">
-                        <DarkModeRounded/>
+                    <div className="item" onClick={() => dispatch({type:"TOGGLE"})}>
+                        {darkMode? <LightModeRounded/> : <DarkModeRounded/>}                        
                     </div>
                     <div className="item">
                         <FullscreenRounded/>
