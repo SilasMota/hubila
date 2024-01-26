@@ -2,6 +2,7 @@ import "./datatable.scss"
 import { DataGrid } from '@mui/x-data-grid';
 import { userColumns, userRows } from "../../datatabelsource";
 import { DeleteForeverRounded, RemoveRedEyeRounded } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Datatable = () => {
 
@@ -12,11 +13,15 @@ const Datatable = () => {
             width: 100,
             sortable: false,
             disableColumnMenu:true,
-            renderCell:() =>{
+            renderCell:(params) =>{
                 return(
                     <div className="cellAction">
-                        <div className="viewButton"><RemoveRedEyeRounded fontSize="small"/></div>
-                        <div className="deleteButton"><DeleteForeverRounded fontSize="small"/></div>
+                        <Link to={`/users/${params.row.id}`}>
+                            <div className="viewButton"><RemoveRedEyeRounded fontSize="small"/></div>
+                        </Link>
+                        <Link>
+                            <div className="deleteButton"><DeleteForeverRounded fontSize="small"/></div>
+                        </Link>
                     </div>
                 )
             },
@@ -26,6 +31,11 @@ const Datatable = () => {
 
     return (  
         <div className="datatable">
+            <div className="datatableTitle">
+                Title
+                <Link to="/users/new" className="link"> Add New</Link>
+            </div>
+            
             <DataGrid 
             rows={userRows} 
             columns={userColumns.concat(actionColumn)} 

@@ -1,28 +1,38 @@
 import { AssignmentRounded, EditNotificationsRounded, EqualizerRounded, Inventory, LogoutRounded, PeopleRounded, PersonRounded, SettingsRounded, SpaceDashboard } from "@mui/icons-material";
 import "./sidebar.scss"
+import { Link } from "react-router-dom";
 
 const Sidbar = () => {
     return ( 
         <div className="sidebar">
             <div className="top">
-                <span className="logo">HUBILA</span>
+                <Link to="/">
+                    <span className="logo">HUBILA</span>
+                </Link>
             </div>
             <div className="center">
                 <ul>
                     <p className="title">MAIN</p>
-                    <li>
-                        <SpaceDashboard className="icon"/>
-                        <span>Dashboard</span>
-                    </li>
+                    <Link to = "/">
+                        <li>
+                            <SpaceDashboard className="icon"/>
+                            <span>Dashboard</span>
+                        </li>
+                    </Link>
+                    
                     <p className="title">LISTS</p>
-                    <li>
-                        <PeopleRounded className="icon"/>
-                        <span>User</span>
-                    </li>
-                    <li>
-                        <Inventory className="icon"/>
-                        <span>Products</span>
-                    </li>
+                    <Link to = "/users">
+                        <li>
+                            <PeopleRounded className="icon"/>
+                            <span>User</span>
+                        </li>
+                    </Link>
+                    <Link to = "/products">
+                        <li>
+                            <Inventory className="icon"/>
+                            <span>Products</span>
+                        </li>
+                    </Link>
                     <li>
                         <AssignmentRounded className="icon"/>
                         <span>Orders</span>
